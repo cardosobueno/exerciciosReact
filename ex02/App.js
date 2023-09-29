@@ -1,39 +1,41 @@
+import { Text, SafeAreaView, StyleSheet, View, Button, Pressable } from 'react-native';
 import { useState } from 'react'
-import { View, Text, Button, StyleSheet } from 'react-native'
-import {styles} from './styles'
+// You can import supported modules from npm
+import { Card } from 'react-native-paper';
 
-
-function App(){
-
+import {decoration} from './styles' 
+// or any files within the Snack
+export default function App() {
 
   const [contador, setContador] = useState(0)
 
 
-  function mudarContador(incrementar){
-    if (incrementar){
+  function somar()
+   {
       setContador(contador+1)
-    }
-    else if (contador > 0){
+
+   }
+
+  function subtrair()
+  {
+    if(contador == 0)
+    {
+     setContador(0)
+    } 
+    else 
+    {
       setContador(contador-1)
     }
   }
 
-
-  return(
-    <View>
-      <Text style={styles.titulo}>Contador de Pessoas</Text>
-
-
-      <Text style={styles.contador}>{contador}</Text>
-
-
-      <Button title="+" color="green" onPress={() => mudarContador(true)}/>
-
-
-      <Button title="-" color="red" onPress={() => mudarContador(false)}/>
-    </View>
-  )
+  return (
+    <SafeAreaView style={decoration.container}>
+      <Text style={decoration.paragraph}>Contador de pessoas</Text>
+      <Card>
+        <Text style={decoration.paragraph}>{contador}</Text>
+        <Button color="green" title="+" onPress={somar}/>
+        <Button color="red" title="-" onPress={subtrair}/>
+      </Card>
+    </SafeAreaView>
+  );
 }
-
-
-export default App

@@ -1,20 +1,17 @@
 import {StyleSheet} from 'react-native'
-
-
-const styles = StyleSheet.create({
-  titulo:{
-    marginTop: 15,
-    textAlign: 'center',
-    fontSize: 20,
-    color: 'orange'
+const decoration = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+    padding: 8,
   },
-  contador:{
-    marginTop: 15,
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 80,
-    color: 'red'
-  }  
-})
+  },
+});
 
-
-export {styles}
+export {decoration}
